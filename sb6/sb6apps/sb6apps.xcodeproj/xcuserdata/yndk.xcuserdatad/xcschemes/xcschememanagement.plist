@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>ktxView.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>sb6apps.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -23,6 +28,11 @@
 			<true/>
 		</dict>
 		<key>B0B8481F1ABE677E006D18FC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B0B8483A1ABEB902006D18FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

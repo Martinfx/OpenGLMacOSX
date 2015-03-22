@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		B0B848161ABE6753006D18FC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0B848151ABE6753006D18FC /* main.cpp */; };
 		B0B848231ABE677E006D18FC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0B848221ABE677E006D18FC /* main.cpp */; };
+		B0B8482A1ABE67C5006D18FC /* myApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0B848281ABE67C5006D18FC /* myApp.cpp */; };
+		B0B8482B1ABE6B09006D18FC /* myApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0B848281ABE67C5006D18FC /* myApp.cpp */; };
+		B0B8482E1ABE79D2006D18FC /* shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0B8482C1ABE79D2006D18FC /* shader.cpp */; };
+		B0B8482F1ABE79D2006D18FC /* shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0B8482C1ABE79D2006D18FC /* shader.cpp */; };
+		B0B848311ABE7CD7006D18FC /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0B848301ABE7CD7006D18FC /* OpenGL.framework */; };
+		B0B848321ABE7CD7006D18FC /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0B848301ABE7CD7006D18FC /* OpenGL.framework */; };
+		B0B848341ABE89FA006D18FC /* sb6ktx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0B848331ABE89FA006D18FC /* sb6ktx.cpp */; };
+		B0B848351ABE89FA006D18FC /* sb6ktx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0B848331ABE89FA006D18FC /* sb6ktx.cpp */; };
+		B0B8483E1ABEB902006D18FC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0B8483D1ABEB902006D18FC /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +39,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		B0B848391ABEB902006D18FC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +55,15 @@
 		B0B848151ABE6753006D18FC /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B0B848201ABE677E006D18FC /* alienrain */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = alienrain; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B848221ABE677E006D18FC /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		B0B848281ABE67C5006D18FC /* myApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = myApp.cpp; sourceTree = "<group>"; };
+		B0B848291ABE67C5006D18FC /* myApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myApp.h; sourceTree = "<group>"; };
+		B0B8482C1ABE79D2006D18FC /* shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = shader.cpp; sourceTree = "<group>"; };
+		B0B8482D1ABE79D2006D18FC /* shader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = shader.hpp; sourceTree = "<group>"; };
+		B0B848301ABE7CD7006D18FC /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		B0B848331ABE89FA006D18FC /* sb6ktx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sb6ktx.cpp; sourceTree = "<group>"; };
+		B0B848361ABE8B22006D18FC /* sb6ktx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sb6ktx.h; sourceTree = "<group>"; };
+		B0B8483B1ABEB902006D18FC /* ktxView */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ktxView; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0B8483D1ABEB902006D18FC /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,10 +71,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0B848311ABE7CD7006D18FC /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B0B8481D1ABE677E006D18FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0B848321ABE7CD7006D18FC /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0B848381ABEB902006D18FC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -60,8 +96,11 @@
 		B0B848091ABE6752006D18FC = {
 			isa = PBXGroup;
 			children = (
+				B0B848301ABE7CD7006D18FC /* OpenGL.framework */,
 				B0B848141ABE6752006D18FC /* sb6apps */,
 				B0B848211ABE677E006D18FC /* alienrain */,
+				B0B848271ABE6790006D18FC /* appInterface */,
+				B0B8483C1ABEB902006D18FC /* ktxView */,
 				B0B848131ABE6752006D18FC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,6 +110,7 @@
 			children = (
 				B0B848121ABE6752006D18FC /* sb6apps */,
 				B0B848201ABE677E006D18FC /* alienrain */,
+				B0B8483B1ABEB902006D18FC /* ktxView */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,6 +129,28 @@
 				B0B848221ABE677E006D18FC /* main.cpp */,
 			);
 			path = alienrain;
+			sourceTree = "<group>";
+		};
+		B0B848271ABE6790006D18FC /* appInterface */ = {
+			isa = PBXGroup;
+			children = (
+				B0B848331ABE89FA006D18FC /* sb6ktx.cpp */,
+				B0B848361ABE8B22006D18FC /* sb6ktx.h */,
+				B0B848281ABE67C5006D18FC /* myApp.cpp */,
+				B0B848291ABE67C5006D18FC /* myApp.h */,
+				B0B8482C1ABE79D2006D18FC /* shader.cpp */,
+				B0B8482D1ABE79D2006D18FC /* shader.hpp */,
+			);
+			name = appInterface;
+			path = sb6apps;
+			sourceTree = "<group>";
+		};
+		B0B8483C1ABEB902006D18FC /* ktxView */ = {
+			isa = PBXGroup;
+			children = (
+				B0B8483D1ABEB902006D18FC /* main.cpp */,
+			);
+			path = ktxView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +190,23 @@
 			productReference = B0B848201ABE677E006D18FC /* alienrain */;
 			productType = "com.apple.product-type.tool";
 		};
+		B0B8483A1ABEB902006D18FC /* ktxView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0B8483F1ABEB902006D18FC /* Build configuration list for PBXNativeTarget "ktxView" */;
+			buildPhases = (
+				B0B848371ABEB902006D18FC /* Sources */,
+				B0B848381ABEB902006D18FC /* Frameworks */,
+				B0B848391ABEB902006D18FC /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ktxView;
+			productName = ktxView;
+			productReference = B0B8483B1ABEB902006D18FC /* ktxView */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -141,6 +220,9 @@
 						CreatedOnToolsVersion = 6.2;
 					};
 					B0B8481F1ABE677E006D18FC = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					B0B8483A1ABEB902006D18FC = {
 						CreatedOnToolsVersion = 6.2;
 					};
 				};
@@ -159,6 +241,7 @@
 			targets = (
 				B0B848111ABE6752006D18FC /* sb6apps */,
 				B0B8481F1ABE677E006D18FC /* alienrain */,
+				B0B8483A1ABEB902006D18FC /* ktxView */,
 			);
 		};
 /* End PBXProject section */
@@ -168,7 +251,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0B8482E1ABE79D2006D18FC /* shader.cpp in Sources */,
+				B0B848341ABE89FA006D18FC /* sb6ktx.cpp in Sources */,
 				B0B848161ABE6753006D18FC /* main.cpp in Sources */,
+				B0B8482A1ABE67C5006D18FC /* myApp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +262,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0B8482F1ABE79D2006D18FC /* shader.cpp in Sources */,
+				B0B848351ABE89FA006D18FC /* sb6ktx.cpp in Sources */,
 				B0B848231ABE677E006D18FC /* main.cpp in Sources */,
+				B0B8482B1ABE6B09006D18FC /* myApp.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0B848371ABEB902006D18FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0B8483E1ABEB902006D18FC /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,9 +313,19 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/include,
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-lGLEW",
+					"-lglfw3",
+				);
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -251,8 +358,18 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/include,
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-lGLEW",
+					"-lglfw3",
+				);
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -289,6 +406,24 @@
 			};
 			name = Release;
 		};
+		B0B848401ABEB902006D18FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B0B848411ABEB902006D18FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -314,6 +449,14 @@
 			buildConfigurations = (
 				B0B848251ABE677E006D18FC /* Debug */,
 				B0B848261ABE677E006D18FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B0B8483F1ABEB902006D18FC /* Build configuration list for PBXNativeTarget "ktxView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0B848401ABEB902006D18FC /* Debug */,
+				B0B848411ABEB902006D18FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
