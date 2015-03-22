@@ -1,0 +1,1 @@
+/usr/bin/c++    -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/tutorial04.exe.dir/tutorial04.cpp.o CMakeFiles/tutorial04.exe.dir/Users/yndk/Dropbox/opengl/OpenGL-tutorial_v0014_33/common/shader.cpp.o  -o tutorial04.exe  
