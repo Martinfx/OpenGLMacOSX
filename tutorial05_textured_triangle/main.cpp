@@ -17,8 +17,6 @@ GLFWwindow* window;
 #include <glm/gtc/type_ptr.hpp>
 //using namespace glm;
 
-#include "SOIL.h" // texture image loading
-
 #include "common/shader.hpp"
 #include "common/texture.hpp"
 
@@ -240,7 +238,7 @@ int main( void )
     GLuint MatrixID = glGetUniformLocation(programID, "MVP");
     
     glm::mat4 Projection;
-    // Projection matrix : 45° Field of View, 4:3 ratio, display range : -0.1 unit <-> -100 units
+    // Projection matrix : 45Â° Field of View, 4:3 ratio, display range : -0.1 unit <-> -100 units
     Projection = glm::perspective(45.0f, 4.0f / 3.0f, 0.1f, 100.0f);
     // Or, for an ortho camera :
     //Projection = glm::ortho(-10.0f,10.0f,-10.0f,10.0f,-1.0f,100.0f); // In world coordinates
