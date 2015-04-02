@@ -12,6 +12,7 @@ GLFWwindow* window;
 
 // Include GLM
 #include <glm/glm.hpp>
+#include <glm/gtx/transform.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 //using namespace glm;
@@ -20,6 +21,7 @@ GLFWwindow* window;
 
 int main( void )
 {
+	std::cerr << "Learing various combination of Projection, Viewing, Modeling" << std::endl;
 	// Initialise GLFW
 	if( !glfwInit() )
 	{
@@ -52,9 +54,9 @@ int main( void )
 	// Ensure we can capture the escape key being pressed below
 	glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
 
-    
+   // print out the OpenGL Version Information 
     const GLubyte *version_string = glGetString (GL_VERSION);
-    std::cout << version_string << std::endl;
+    std::cout << "OpenGL: " << version_string << std::endl;
     
 	// Dark blue background
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
@@ -69,21 +71,19 @@ int main( void )
 	// Get a handle for our "MVP" uniform
 	GLuint MatrixID = glGetUniformLocation(programID, "MVP");
 
+	glm::mat4 Projection;
 	// Projection matrix : 45° Field of View, 4:3 ratio, display range : -0.1 unit <-> -100 units
-	glm::mat4 Projection = glm::perspective(45.0f, 4.0f / 3.0f, 0.1f, 100.0f);
+	Projection = glm::perspective(45.0f, 4.0f / 3.0f, 0.1f, 100.0f);
 	// Or, for an ortho camera :
-	//glm::mat4 Projection = glm::ortho(-10.0f,10.0f,-10.0f,10.0f,0.0f,100.0f); // In world coordinates
+	//Projection = glm::ortho(-10.0f,10.0f,-10.0f,10.0f,-1.0f,100.0f); // In world coordinates
 	
 	// Camera matrix
 	glm::mat4 View       = glm::lookAt(
-								glm::vec3(4,3,3), // Camera is at (4,3,3), in World Space
-								glm::vec3(0,0,0), // and looks at the origin
-								glm::vec3(0,1,0)  // Head is up (set to 0,-1,0 to look upside-down)
-						   );
-	// Model matrix : an identity matrix (model will be at the origin)
-	glm::mat4 Model      = glm::mat4(1.0f);
-	// Our ModelViewProjection : multiplication of our 3 matrices
-	glm::mat4 MVP        = Projection * View * Model; // Remember, matrix multiplication is the other way around
+					glm::vec3(4,3,3), // Camera is at (4,3,3), in World Space
+					glm::vec3(0,0,0), // and looks at the origin
+					glm::vec3(0,1,0)  // Head is up (set to 0,-1,0 to look upside-down)
+				 );
+        View = glm::mat4(1.0); // identity
 
 	static const GLfloat g_vertex_buffer_data[] = { 
 		-1.0f, -1.0f, 0.0f,
@@ -105,6 +105,22 @@ int main( void )
 		// Use our shader
 		glUseProgram(programID);
 
+	// Model matrix : an identity matrix (model will be at the origin)
+	float tz = -5 + cos(glfwGetTime()*2*M_PI);
+	glm::mat4 Tz = glm::translate(glm::vec3(.0f, 0.0f , tz));
+	float tx = 2*cos(glfwGetTime()*2*M_PI/4);
+	glm::mat4 Tx = glm::translate(glm::vec3(tx, 0.0f , 0));
+
+	glm::mat4 T = Tx*Tz;
+
+	float angle = glfwGetTime() * 2 * M_PI;
+	glm::mat4 R = glm::rotate (angle,glm::vec3(0.f,1.f,0.f));
+	R = glm::mat4(1.0);
+
+	glm::mat4 Model      = glm::mat4(1.0f) * T * R;
+
+	// Our ModelViewProjection : multiplication of our 3 matrices
+	glm::mat4 MVP        = Projection * View * Model; // Remember, matrix multiplication is the other way around
 		// Send our transformation to the currently bound shader, 
 		// in the "MVP" uniform
 		glUniformMatrix4fv(MatrixID, 1, GL_FALSE, glm::value_ptr(MVP));

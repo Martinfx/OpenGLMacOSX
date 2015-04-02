@@ -1,6 +1,6 @@
 dependencies: \
-  /Users/yndk/Dropbox/opengl/OpenGL-tutorial_v0014_33/sb6/sb6apps/alienrain/main.cpp \
-  /Users/yndk/Dropbox/opengl/OpenGL-tutorial_v0014_33/sb6/sb6apps/sb6apps/myApp.h \
+  /Users/yndk/Desktop/OpenGLMacOSX/sb6/sb6apps/alienrain/main.cpp \
+  /Users/yndk/Desktop/OpenGLMacOSX/sb6/sb6apps/sb6apps/myApp.h \
   /usr/local/include/GL/glew.h /usr/local/include/GLFW/glfw3.h \
   /usr/local/include/glm/glm.hpp \
   /usr/local/include/glm/detail/_fixes.hpp \
@@ -76,4 +76,4 @@ dependencies: \
   /usr/local/include/glm/integer.hpp \
   /usr/local/include/glm/detail/func_integer.hpp \
   /usr/local/include/glm/detail/func_integer.inl \
-  /Users/yndk/Dropbox/opengl/OpenGL-tutorial_v0014_33/sb6/sb6apps/sb6apps/sb6ktx.h
+  /Users/yndk/Desktop/OpenGLMacOSX/sb6/sb6apps/sb6apps/sb6ktx.h

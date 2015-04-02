@@ -158,7 +158,15 @@ class alienrain_app : public my::application
         //
         // load texture file
         //
-        std::string textureFileName = "aliens.ktx";
+        system("pwd");
+//        system("ls ./media");
+//        std::cerr << "-------" << std::endl;
+//        system("ls ..");
+//        std::cerr << "-------" << std::endl;
+//        system("ls ../..");
+//        std::cerr << "-------" << std::endl;
+//        system("ls ../media/texture");
+        std::string textureFileName = "./media/texture/aliens.ktx";
         tex_alien_array = sb6::ktx::file::load(textureFileName.c_str());
         if (tex_alien_array==0) {
             std::cerr << "texture file not loaded: " << textureFileName << std::endl;

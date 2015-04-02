@@ -1,6 +1,6 @@
 dependencies: \
-  /Users/yndk/Dropbox/opengl/OpenGL-tutorial_v0014_33/sb6/sb6apps/sb6apps/myApp.cpp \
-  /Users/yndk/Dropbox/opengl/OpenGL-tutorial_v0014_33/sb6/sb6apps/sb6apps/myApp.h \
+  /Users/yndk/Desktop/OpenGLMacOSX/sb6/sb6apps/sb6apps/myApp.cpp \
+  /Users/yndk/Desktop/OpenGLMacOSX/sb6/sb6apps/sb6apps/myApp.h \
   /usr/local/include/GL/glew.h /usr/local/include/GLFW/glfw3.h \
   /usr/local/include/glm/glm.hpp \
   /usr/local/include/glm/detail/_fixes.hpp \
