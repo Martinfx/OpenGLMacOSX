@@ -4,5 +4,5 @@ all:
 CXX = clang++ -std=c++11
 CXXFLAGS = -I /usr/local/include -I /usr/local/include/GLFW -I ..
 
-LIBFILES =  ../common/shader.cpp ../common/texture.cpp ../common/controls.cpp
+LIBFILES =  ../common/shader.cpp ../common/texture.cpp ../common/controls.cpp ../common/objloader.cpp
 LDFLAGS = $(LIBFILES) -L /usr/local/lib -lglew -lglfw3 -framework opengl
