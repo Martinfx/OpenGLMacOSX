@@ -119,9 +119,11 @@ GLuint png_texture_load(const char * file_name, int * width, int * height)
     {
         case PNG_COLOR_TYPE_RGB:
         format = GL_RGB;
+	fprintf(stderr, "%s: image type = GL_RGB\n", file_name);
         break;
         case PNG_COLOR_TYPE_RGB_ALPHA:
         format = GL_RGBA;
+	fprintf(stderr, "%s: image type = GL_RGBA\n", file_name);
         break;
         default:
         fprintf(stderr, "%s: Unknown libpng color type %d.\n", file_name, color_type);
@@ -255,10 +257,10 @@ int main( void )
     
     
     static const GLfloat g_vertex_buffer_data[] = {
-        -1.0f, -1.0f, 0.0f,
-        1.0f, -1.0f, 0.0f,
-        1.0f,  1.0f, 0.0f,
-        -1.0f, 1.0f, 0.0f
+        -1.0f, -1.0f, 0.0f, // left bottom
+        1.0f, -1.0f, 0.0f,  // right bottom
+        1.0f,  1.0f, 0.0f,  // right top
+        -1.0f, 1.0f, 0.0f   // left top
     };
     static const GLushort g_element_buffer_data[] = { 0, 1, 2 };
     
@@ -268,20 +270,21 @@ int main( void )
     glBufferData(GL_ARRAY_BUFFER, sizeof(g_vertex_buffer_data), g_vertex_buffer_data, GL_STATIC_DRAW);
 
     
-    std::string textureFileName = "grass512.png";
+    std::string textureFileName = "road512.png"; //"sunflower-transp.png"; //"grass512.png";
     glActiveTexture (GL_TEXTURE0);
     GLuint texture;
     
 //    texture = loadBMP_custom("uvtemplate.bmp");
     int textureImageHeight, textureImageWidth;
     texture = png_texture_load (textureFileName.c_str(), &textureImageWidth, &textureImageHeight);
+
     if (texture==0) {
         std::cerr << "Texture loading error: " << textureFileName << std::endl;
     }
     std::cerr << "Texture file loaded: " << textureFileName
               << " " << textureImageWidth << "x" << textureImageHeight << std::endl;
     
-    GLuint textureID= glGetUniformLocation(programID, "myTextureSampler");
+    GLuint textureSampler= glGetUniformLocation(programID, "myTextureSampler");
 
     
     static const GLfloat g_uv_buffer_data[] = {
@@ -295,10 +298,27 @@ int main( void )
     glGenBuffers (1, &uvBuffer);
     glBindBuffer (GL_ARRAY_BUFFER, uvBuffer);
     glBufferData (GL_ARRAY_BUFFER, sizeof(g_uv_buffer_data), g_uv_buffer_data, GL_STATIC_DRAW);
-    
+
+    bool doAlphaBlending = false;
+
     printf("now run ...\n");
+
+// alpha-blending and depth testing cannot be done simply. You need some sort of buffer manipulation.
+// Here we just show you that alpha-blending is possible, without applying depth test
+
+    if (doAlphaBlending) {
+    // alpha channel blending
+    glEnable (GL_BLEND);
+    glEnable (GL_TEXTURE_2D);
+    glEnable (GL_ALPHA_TEST);
+    glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    }
+    else {
     glEnable (GL_DEPTH_TEST);
     glDepthFunc(GL_LESS);
+    }
+
+
 
     do{
         
@@ -311,7 +331,7 @@ int main( void )
         // 2. texture image
         glActiveTexture(GL_TEXTURE0);
         glBindTexture (GL_TEXTURE_2D, texture);
-        glUniform1i(textureID, 0);
+        glUniform1i(textureSampler, 0);
         
         // 3. texture coordinates
         glEnableVertexAttribArray(1);
